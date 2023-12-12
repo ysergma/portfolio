@@ -1,20 +1,30 @@
 import React,{useEffect,useState} from 'react'
 import {motion} from "framer-motion"
 import "./About.scss" 
-import {images} from '../../constants'
-const abouts = [
-  {title:'Web Development', description:'I am a good Frontend Web Developer',imgUrl:images.about01},
-  {title:'Web Design', description:'I am a good Frontend Web Designer',imgUrl:images.about02 },
-  {title:'UI/UX design', description:'I am a skilled UI/UX designer',imgUrl:images.about03 },
-  {title:'MERN Stack', description:'I am proficient in working With MERN technologies',imgUrl:images.about04 }
-]
+import AppWrap from '../../wrapper/AppWrap'
+import { urlFor,client } from '../../client'
+
 const About = () => {
+  const [abouts, setAbouts] = useState([])
+  useEffect(() => {
+    const query = '*[_type == "abouts"]'
+    const fetchData = async () => {
+    try {
+      const data = await client.fetch(query)
+      setAbouts(data)
+      console.log(abouts)
+    } catch (error) {
+      console.log(error)
+    }}
+    fetchData();
+  },[] )
+  
   return (
     <>
     <h2 className='head-text'>
     I know that <span>Good Apps</span> <br />  means <span>Good Business</span>
     </h2>
-
+      
     <div className='app__profiles'>
       {abouts.map((about,index)=>(
         <motion.div
@@ -24,7 +34,7 @@ const About = () => {
           className='app__profile-item'
           key={about.title+index}
         >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className='bold-text' style={{marginTop: 20}}>{about.title}</h2>
             <p className='p-text' style={{marginTop: 10}}>{about.description}</p>
         </motion.div>
@@ -34,4 +44,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AppWrap(About,"about")

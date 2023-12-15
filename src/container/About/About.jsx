@@ -20,12 +20,12 @@ const About = () => {
   },[] )
   
   return (
-    <>
+    <div id='About'>
     <h2 className='head-text'>
     I know that <span>Good Apps</span> <br />  means <span>Good Business</span>
     </h2>
       
-    <div className='app__profiles'>
+    <div className='app__profiles' >
       {abouts.map((about,index)=>(
         <motion.div
           whileInView={{opacity:1}}
@@ -40,7 +40,7 @@ const About = () => {
         </motion.div>
       ))}
     </div>
-    </>
+    </div>
   )
 }
 

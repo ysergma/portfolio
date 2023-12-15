@@ -36,7 +36,7 @@ const Work = () => {
   }
 
   return (
-    <>
+    <div id='Work'>
         <h2 className='head-text'>
          My Creative <span>Portfolio</span> Section
         <div className='app__work-filter'>
@@ -101,7 +101,7 @@ const Work = () => {
                 </div>
             ))}
         </motion.div>
-    </>
+    </div>
   )
 }
 

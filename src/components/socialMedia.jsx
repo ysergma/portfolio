@@ -7,13 +7,13 @@ const socialMedia = () => {
   return (
     <div className='app__social'>
         <div>
-            <FaLinkedin/>
+          <a href="https://www.linkedin.com/in/sergma/" target="_blank" rel="noopener noreferrer"> <FaLinkedin/></a>  
         </div>
         <div>
-            <FaGithub/>
+            <a href="https://github.com/ysergma" target="_blank" rel="noopener noreferrer"> <FaGithub/></a>
         </div>
         <div>
-            <FaBehanceSquare/>
+          <a href="https://www.behance.net/youssoufsergma" target="_blank" rel="noopener noreferrer"> <FaBehanceSquare/></a>  
         </div>
     </div>
   )

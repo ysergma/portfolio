@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { images } from '../../constants'
 import {HiMenuAlt4, HiX} from 'react-icons/hi'
 import { motion} from 'framer-motion'
+import {HashLink} from 'react-router-hash-link'
 import './Navbar.scss'
 
 const Navbar = () => {
@@ -9,16 +10,21 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
         <div className='app__navbar-logo'>
-            <img src={images.logo} alt="logo" />
+           <a href="/"><img src={images.logo} alt="logo" /></a> 
         </div>
         <ul className='app__navbar-links'>
             {['Home','About','Skills','Work','Contact'].map((item)=>(
               <li key={`link-${item}`} className='app__flex p-text'>
                  <div/>
+                 <HashLink to={`#${item}`}>
                  <a href={`#${item}`}>{item}</a>
+                 </HashLink>
                 </li>
             ))}
         </ul>
+        <div>
+           <a href="https://archive.org/download/youssouf-sergma-cv/Youssouf%20Sergma%20CV.pdf" target="_blank" rel="noopener noreferrer"><button className='cv__button'>Download My Resume</button></a>
+        </div>
         {/* Mobile navbar */}
         <div className='app__navbar-menu'>
         <HiMenuAlt4 onClick={()=>setToggle(true)}/>
@@ -31,7 +37,9 @@ const Navbar = () => {
              <ul>
             {['Home','About','Skills','Work','Contact'].map((item)=>(
               <li key={item} >
+                 <HashLink to={`#${item}`}>
                  <a href={`#${item}`} onClick={()=>setToggle(false)}>{item}</a>
+                 </HashLink>
                 </li>
             ))}
             </ul>

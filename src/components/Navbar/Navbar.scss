@@ -168,3 +168,12 @@
         display: none;
     }
 }
+
+.cv__button {
+  background-color: var(--secondary-color);
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem 0.5rem;
+  border-radius:6% ;
+  cursor: pointer;
+}

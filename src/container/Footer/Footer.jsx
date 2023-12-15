@@ -35,7 +35,7 @@ const Footer = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <>
+    <div id='Contact'>
        <h2 className='head-text'>Take a coffee & chat with me </h2>
       <div className='app__footer-cards'>
          <div className='app__footer-card'>
@@ -64,7 +64,7 @@ const Footer = () => {
       : <div>
           <h3 className='head-text'>Thank You For Getting In Touch!</h3>
         </div>}
-    </>
+    </div>
   )
 }
 

@@ -3,6 +3,9 @@ import { images } from '../../constants'
 import {HiMenuAlt4, HiX} from 'react-icons/hi'
 import { motion} from 'framer-motion'
 import {HashLink} from 'react-router-hash-link'
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaBehanceSquare } from "react-icons/fa";
 import './Navbar.scss'
 
 const Navbar = () => {
@@ -43,7 +46,10 @@ const Navbar = () => {
                 </li>
             ))}
             </ul>
-          </motion.div>
+            <a href="https://www.linkedin.com/in/sergma/" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a> 
+          <a href="https://github.com/ysergma" target="_blank" rel="noopener noreferrer"><FaGithub/></a>  
+          <a href="https://www.behance.net/youssoufsergma" target="_blank" rel="noopener noreferrer"><FaBehanceSquare/></a>
+         </motion.div>
         )}
 
         </div>
